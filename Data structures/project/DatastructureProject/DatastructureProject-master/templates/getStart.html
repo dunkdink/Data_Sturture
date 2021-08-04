@@ -1,0 +1,155 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+{% block content %}
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+<style>
+  /* @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap'); */
+  /* @import url('https://fonts.googleapis.com/css2?family=Sigmar+One&family=Squada+One&display=swap'); */
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+  
+
+  .font1 {
+    /* font-family: 'Sigmar One', cursive; */
+
+    /* font-family: 'Sigmar One', cursive;
+    font-family: 'Squada One', cursive; */
+
+    font-family: 'Fredoka One', cursive;
+  }
+
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+
+
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* 
+  body {
+    margin-top: 20px;
+    margin-bottom: 0px;
+    margin-right: 150px;
+    margin-left: -150px;
+    padding: 320;
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+
+    background-image: url("{% static 'b4.jpg' %}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0dcaf0;
+
+    text-align: center;
+    text-color: white
+  } */
+
+  .box {
+    background-image: url("{% static 'winner.gif' %}");
+    background-color: #0dcaf0;
+    border-radius: 10px;
+    height: 400px;
+    width: 400px;
+    margin-top: -300px;
+    margin-bottom: 600px;
+    margin-right: 600px;
+    margin-left: 750px;
+
+  }
+
+  .header {
+    object-fit: none;
+    padding: 70px;
+    text-align: center;
+    background: transparent;
+    color: rgb(255, 255, 255);
+    /* font-size: 30px;  rgb(19, 19, 19) rgb(255, 255, 255) #212529*/
+
+    margin-top: 200px;
+    margin-bottom: 200px;
+    margin-right: 150px;
+    margin-left: 150px;
+
+  }
+
+  .container {
+    height: 70px;
+    position: relative;
+    /* border: 3px solid green; */
+  }
+
+  .center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  .btnn{
+    border-radius: 25px;
+    width: 130px;
+  }
+</style>
+
+
+<!-- <marquee behavior="slide" direction="down" scrollamount=10>
+
+  <h1><b>My Classroom Checker</b></h1>
+  <p>Welcome, Let check in your class</p>
+  <a href="/loginGet" class="btn btn-dark text-white">Get Start</a>
+
+</marquee> -->
+
+<body>
+
+
+  <!-- <div class="header">
+  <marquee behavior="slide" direction="down" scrollamount=10>
+    <h1 align="center">ClassRoom Check-in</h1>
+    <p align="center">Welcome, Find your class and Check-in hope you enjoy your class.</p>
+    <a href="/loginGet" class="btn btn-dark text-white aligncenter">Get Start</a>
+  </marquee>
+</div> -->
+  <div class="header">
+    <h5 class="font1 display-5">Welcome, Classroom Checker</h5>
+    <p>Find your class and Check-in hope you enjoy your class.</p>
+
+    <div class="container">
+      <div class="center">
+        <a href="/loginGet" class="btnn btn btn-dark text-white aligncenter">Get Start</a>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- <marquee behavior="slide" direction="down"></marquee><div class="box"></div></marquee> -->
+
+{% endblock %}

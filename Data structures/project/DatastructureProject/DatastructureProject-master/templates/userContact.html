@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <br>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h4>Enter Information to Creat Account : </h4>
+            <form action="registerIDdata" method="post">
+                {% csrf_token %}
+                <div class = "from-group">
+                    <label for="">Student ID : </label>
+                    <input type="text" class = "form-control" name="studentID">
+                </div>
+                <div class = "from-group">
+                    <label for="">Name-Surname : </label>
+                    <input type="text" class = "form-control" name="studentName">
+                </div>
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+          </div>
+        </div>
+    </div>
+{% endblock %}

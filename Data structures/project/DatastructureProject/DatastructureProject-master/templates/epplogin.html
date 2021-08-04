@@ -1,0 +1,152 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+{% block content %}
+<style>
+    .box {
+        background-color: #0dcaf0;
+        background-image: url("{% static 'h2.png' %}");
+        /* background-image: linear-gradient(to bottom right, rgb(66, 164, 182), rgb(33, 38, 95)); */
+        color: white;
+        border-radius: 20px;
+        margin: 1px;
+        padding: 60px;
+
+    }
+
+    .box2 {
+        /* background-color: #0c7c92; */
+        /* background-image: linear-gradient(to bottom right, rgb(0, 217, 255), rgb(255, 253, 136)); */
+        /* color: white; */
+        border-radius: 20px;
+        border: 2px solid rgb(231, 231, 231);
+        /* box-shadow: 2px 2px 2px rgb(204, 204, 204); */
+        margin: 10px;
+        padding: 20px;
+
+    }
+</style>
+
+
+<div class="container">
+    <div class="box my-4">
+        <!-- <h1 style="display: inline;"> <img src="{% static 'eppD.png' %}" align="right" alt="19.png" width="100" height="auto" ></h1> -->
+        <h2 style="display: inline;">ClassRoom > English for Professional Purpose 2564</h2>
+    </div>
+
+
+
+    {% if user.is_staff == 1 %}
+    {% if isStart == True %}
+    <div class="row">
+        <div class="col-sm box2">
+            <h4>Enter ID to kick out of class: </h4>
+            <form action="ePPlogout" method="post">
+                {% csrf_token %}
+                <div class="from-group">
+                    <input type="text" class="form-control" name="studentID">
+                </div>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-dark">
+            </form>
+        </div>
+        <div class="col-sm box2">
+            <h4>End class: </h4>
+            <form action="ePPEndClass" method="post">
+                {% csrf_token %}
+                <input type="submit" value="EndClass" class="btn btn-danger">
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <div class='row'>
+        <div class='col-sm box2'>
+            <h4>Press the button to start a class</h4>
+            <form action="eppStart" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Start" class="btn btn-info text-white">
+            </form>
+        </div>
+    </div>
+    {% endif %}
+    {% else %}
+    {% if isStart == True %}
+    <div class="row">
+        <div class="col-sm box2">
+            <h1 style="display: inline;"> <img src="{% static '7.png' %}" alt="..." width="50" height="auto "></h1>
+            <h5 style="display: inline;">&nbsp; Press the button below to join class :</h5>
+            <br>
+            <br>
+            <form action="addIDNameEpp" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Submit" class="btn btn-info text-white">
+            </form>
+        </div>
+        <div class="col-sm box2">
+            <h1 style="display: inline;"> <img src="{% static '8.png' %}" alt="..." width="50" height="auto "></h1>
+            <h5 style="display: inline;">&nbsp; Press the button to exit class :</h5>
+            <br>
+            <br>
+            <form action="ePPlogout" method="post">
+                {% csrf_token %}
+                <input type="submit" value="Submit" class="btn btn-dark">
+            </form>
+        </div>
+    </div>
+    {% else %}
+    <h4>This Class is Now Close</h4>
+    {% endif %}
+    {% endif %}
+
+
+
+    <br>
+    {% if alreadylogin == True %}
+    {% if addFormed == True %}
+    <p>You are In Class !!</p>
+    {% endif %}
+    {% else %}
+    {% if alreadyInOtherClass == True %}
+    <p>You are In another class !!</p>
+    {% endif %}
+    {% endif %}
+    {% if noInDataBase == True %}
+    <p>You are not Student !!!</p>
+    {% endif %}
+    {% if alreadyRegister == True %}
+    <p>You are already Register as a Student !!!</p>
+    {% endif %}
+    {% if registerSucess == True %}
+    <p>Register Sucess !!</p>
+    {% endif %}
+
+
+    {% if isStart == True %}
+
+    <h1 style="display: inline;"> <img src="{% static '9.png' %}" alt="..." width="50" height="auto "></h1>
+    <h3 style="display: inline;">&nbsp; Active Student in Class :</h3>
+    <div class="btn-group">
+        &emsp;
+        <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Sorted by :
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="ePPMinMaxID">Id น้อยไปมาก</a></li>
+            <li><a class="dropdown-item" href="ePPMaxMinID">Id มากไปน้อย</a></li>
+            <li><a class="dropdown-item" href="ePPMaxMinDay">Time lastest</a></li>
+            <li><a class="dropdown-item" href="ePPMinMaxDay">Time earliest</a></li>
+        </ul>
+    </div>
+    <ul>
+        <br>
+        {% for i in studentInEpp %}
+        {% if user.is_staff == 1 %}
+        <p>{{i}} <a href="epplogout/{{i.0}}{{i.1}}{{i.2}}{{i.3}}{{i.4}}{{i.5}}{{i.6}}{{i.7}}">Remove from class</a></p>
+        {% else %}
+        <p>{{i}}</p>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock %}

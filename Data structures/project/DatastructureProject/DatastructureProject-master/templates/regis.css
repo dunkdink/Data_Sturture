@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #17a2b8;
+    height: 100vh;
+}
+#regis .container #regis-row #regis-column #regis-box {
+    margin-top: 120px;
+    max-width: 600px;
+    height: 320px;
+    border: 1px solid #9C9C9C;
+    background-color: #EAEAEA;
+}
+#regis .container #regis-row #regis-column #regis-box #regis-form {
+    padding: 20px;
+}
+#regis .container #regis-row #regis-column #regis-box #regis-form {
+    margin-top: -85px;
+  }

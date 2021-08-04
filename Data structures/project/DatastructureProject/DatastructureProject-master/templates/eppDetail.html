@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+
+
+
+{% block content %}
+
+
+<style>
+    .box {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .boxPic {
+        background-color: #0dcaf0;
+        color: white;
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        height: 500px;
+
+    }
+    .butt{
+        margin: 20px;
+        text-align: right;
+    }
+    .btnChange{
+    border-radius: 25px;
+    width: 130px;
+  }
+</style>
+
+<div class="container">
+
+    <div class="box my-4">
+        <h1 style="display: inline;">ENGLISH FOR PROFESSIONAL PURPOSE</h1>
+    </div>
+
+
+    <img src="https://paulhaydock.com/wp-content/uploads/2020/12/Banner-English.jpg" alt="..." width="100%"
+        height="auto">
+    <br>
+    <br>
+    <p>The English for Professional Purposes (ESL) certificate program provides students the opportunity to refine
+        written and verbal communication skills that employers find important but are difficult to master in one's
+        second or third language. In the courses, students learn basic concepts of grammar and social practice as they
+        focus on the most practical skills for workplace and public communication. Students may take individual courses
+        or take the four required to earn a certificate.</p>
+    <br>
+<div class="butt">
+    {% if user.is_authenticated %}
+    <a href="/epplogin" class="btnChange btn btn-dark text-white">Join Here</a>
+    {% else %}
+    <h5>Please login First</h5>
+    <a href="/loginGet" class="btnChange btn btn-dark text-white">Login Here</a>
+    {% endif %}
+</div></div>
+
+{% endblock %}

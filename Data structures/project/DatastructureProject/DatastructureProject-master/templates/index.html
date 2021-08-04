@@ -1,0 +1,289 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+
+
+
+{% block content %}
+
+<style>
+    
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: dark;
+        /* background-image: url("{% static 'b4.jpg' %}"); */
+        height: 100vh;
+    }
+
+    .box {
+
+        background-color: #212529;
+        color: rgb(0, 0, 0);
+        /* border: 2px solid black; */
+        margin: 0px;
+        padding: 20px;
+    }
+
+    .header {
+        object-fit: none;
+        padding: 70px;
+        text-align: center;
+        background: #000000;
+        color: rgb(255, 255, 255);
+        /* font-size: 30px;  rgb(19, 19, 19) rgb(255, 255, 255) #212529*/
+    }
+
+    .header2 {
+        object-fit: none;
+        padding: 60px;
+        text-align: center;
+        background: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
+        /* font-size: 30px; */
+    }
+
+    .box {
+        background-color: #0dcaf0;
+        color: white;
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        margin: 0px;
+        padding: 20px;
+    }
+
+    .top-left {
+        position: absolute;
+        top: 8px;
+        left: 16px;
+    }
+</style>
+
+<div class="header">
+    <marquee behavior="slide" direction="down" scrollamount=10>
+        <h1 align="center">Check-in your Class</h1>
+        <p align="center">Welcome, Find your class and Check-in hope you enjoy your class.</p>
+    </marquee>
+</div>
+
+
+
+<!-- <hr width = "50%" size = "10"> -->
+<!-- <h1>Please login</h1> -->
+<!-- <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+    <center>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+    </center> -->
+
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <img src="https://wallpapercave.com/wp/wp2972537.jpg" class="d-block w-100" height=700 alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- https://i.pinimg.com/originals/68/64/78/686478094fcaa756279876ad39ab9561.jpg -->
+                <!-- /header-text -->
+
+                <!-- <div class="header-text hidden-xs">
+                    <div class="col-md-12 text-center">
+                        <h2> <span>Welcome to <strong>LOREM IPSUM</strong></span> </h2>
+                        <h3> <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span> </h3>
+                        <br>
+                        <div class="">
+                            <a class="btn btn-theme btn-sm btn-min-block" href="#">Login</a>
+                            <a class="btn btn-theme btn-sm btn-min-block" href="#">Register</a>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- /header-text -->
+
+                <!-- <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+
+
+
+        </div>
+        <div class="carousel-item">
+            <img src="https://wallpapercave.com/wp/wp2044697.jpg" class="d-block w-100" height=700 alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <img src="https://cutewallpaper.org/21/computer-science-engineering-wallpapers/Computer-Science-Wallpapers-77+-images-.jpg"
+                class="d-block w-100" height=700 alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.springboard.com/library/static/cb92b35a5d50085b5a81b5a1e66bd46e/bbc2a/DSC-Article-datascientist-generalimage.png"
+                class="d-block w-100" height=700 alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div> -->
+        </div>
+        <div class="carousel-item">
+            <img src="https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701662920.jpg"
+                class="d-block w-100" height=700 alt="...">
+            <!-- <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p>
+            </div> -->
+        </div>
+
+    </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+
+
+
+<!-- <div class="card text-dark mb-3" style="max-width: 18rem;">
+        <div class="card-header bg-primary border-success text-white"><b>Header</b></div>       
+        <div class="card-body">
+            <img src="{% static 'datajpg.jpg' %}" class="card-img-top" alt="..."style=" >
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+    </div> -->
+
+
+<div class="header2">
+    <marquee behavior="slide" direction="down" scrollamount=10>
+        <h1 align="center">Explore Your ClassRoom</h1>
+        <p align="center">Start the class on time. Make a grand stage entrance to hush a large class and gain attention.
+        </p>
+    </marquee>
+</div>
+
+
+
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+
+
+        <div class="card mx-3 my-3 " style="width: 18rem; border-radius: 25px; ">
+            <div class="card-header bg-transparent ">
+                <h5>DataStructure</h5>
+            </div> <br>
+            <img src="{% static 'datajpg.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <!-- <h5 class="card-title">Data Structure and Algorithum</h5> -->
+                <p class="card-text"> A data structure is a particular way of organizing data in a computer so that it
+                    can be used effectively.</p>
+                <a href="/dataDetail" class="btn btn-dark text-white">More Detail</a>
+            </div>
+        </div>
+
+        <div class="card mx-3 my-3" style="width: 18rem; border-radius: 25px; ">
+            <div class="card-header bg-transparent">
+                <h5>ComputerNetwork</h5>
+            </div><br>
+            <img src="{% static 'net.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <!-- <h5 class="card-title">Computer Network</h5> -->
+                <p class="card-text">Computer network, two or more computers that are connected with one another for the
+                    purpose of communicating data electronically. </p>
+                <a href="/netDetail" class="btn btn-dark text-white">More Detail</a>
+            </div>
+        </div>
+
+        <div class="card mx-3 my-3" style="width: 18rem; border-radius: 25px; ">
+            <div class="card-header bg-transparent">
+                <h5>ComputerOrganized</h5>
+            </div><br>
+            <!-- <h5 class="card-title">Computer Organized and Assembly language</h5> -->
+            <div class="card-body">
+                <img src="{% static 'org.jpg' %}" class="card-img-top" alt="...">
+                <p class="card-text">Computer Organization is concerned with the structure and behaviour of a computer
+                    system as seen by the user.</p>
+                <a href="/orgDetail" class="btn btn-dark text-white">More Detail</a>
+            </div>
+        </div>
+
+        <div class="card mx-3 my-3" style="width: 18rem; border-radius: 25px; ">
+            <div class="card-header bg-transparent">
+                <h5>Englsih for Professional Purpose</h5>
+            </div><br>
+            <img src="{% static 'eppD.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <!-- <h5 class="card-title">Englsih for Professional Purpose</h5> -->
+                <p class="card-text">A big part of learning English for professional purposes is to learn the jargon
+                    that you'll need to use and understand in your line of work. </p>
+                <a href="/eppDetail" class="btn btn-dark text-white">More Detail</a>
+            </div>
+        </div>
+
+        <div class="card mx-3 my-3" style="width: 18rem; border-radius: 25px; ">
+            <div class="card-header bg-transparent">
+                <h5>Probability and Statistic</h5>
+            </div><br>
+            <img src="{% static 'prob.jpg' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <!-- <h5 class="card-title">Probability and Statistic</h5> -->
+                <p class="card-text">Probability tells us how often some event will happen after many repeated trials.
+                </p>
+                <a href="/probDetail" class="btn btn-dark text-white">More Detail</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<br>
+<br>
+<!-- Copyright -->
+<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+  © 2021 Copyright: MyClassroomChecker.com
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+{% endblock %}

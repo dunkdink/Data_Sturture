@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+
+{% block content %}
+
+<style>
+    .box {
+
+        background-color: #212529;
+        color: rgb(0, 0, 0);
+        /* border: 2px solid black; */
+        margin: 0px;
+        padding-top: 40px;
+        padding-bottom: 120px;
+        text-color: white;
+        text-align: center;
+    }
+
+    .box2 {
+
+        background-color: #212529;
+        color: rgb(0, 0, 0);
+        /* border: 2px solid black;  212529*/
+        margin-left: 32%;
+        margin-right: 32%;
+        max-width: 35%;
+        padding: 20px;
+        text-color: white;
+        text-align: center;
+    }
+
+    input[type="text"],
+    input.search {
+        float: left;
+        width: 80%;
+    }
+
+    input[type="submit"],
+    input.submit {
+        float: right;
+        width: 19%;
+    }
+</style>
+
+
+<div class="body">
+
+    <div class="row">
+        <div class="col-sm">
+
+            <div class="box">
+
+                <div class="box2 text-white">
+                    <h4>Search by student ID :</h4>
+                    <form action="searchInAllStudent" method="post">
+                        {% csrf_token %}
+                        <div class="from-group my-4">
+                            <input type="text" id="formControlDefault" class="form-control" name="studentID">
+                        </div>
+
+                        <input type="submit" value="Submit" class="btn btn-info text-dark">
+                    </form>
+                </div>
+
+            </div>
+
+            <br>
+
+            {% if messages %}
+            <center>
+                <div class="alert alert-danger" role="alert">
+                    {% for message in messages %}
+                    <b>{{message}}</b>
+                    {% endfor %}
+                </div>
+            </center>
+            {% endif %}
+        </div>
+    </div>
+
+    
+    <br>
+    <div class="container">
+        <h1 style="display: inline;"> <img src="{% static '13.png' %}" alt="..." width="70" height="auto "></h1>
+        <h2 class="display-6" style="display: inline;">&nbsp; All Student</h2>
+
+
+        <ul>
+            <br>
+            <br>
+            {% for i in allStudent %}
+            <li>
+                <p>{{i}} <a href="/userLink/{{i}}">More Detail</a></p>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

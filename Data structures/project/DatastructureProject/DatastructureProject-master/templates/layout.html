@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My ClassRoom Checker</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+</head>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+  .font1 {
+    font-family: 'Fredoka One', cursive;
+  }
+  h1{
+    font-family: 'Fredoka One', cursive;
+  }
+  h2{
+    font-family: 'Fredoka One', cursive;
+  }
+  h3{
+    font-family: 'Fredoka One', cursive;
+  }
+  h4{
+    font-family: 'Fredoka One', cursive;
+  }
+</style>
+
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <a class="navbar-brand text-info" href="/">
+        <h5 class="font1">My Classroom Checker</h5>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="/classStatus">Student List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/aboutus">About Us</a>
+          </li>
+
+
+          {% if user.is_authenticated %}
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ClassRoom
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/dataStructlogin">DataStructure2564</a></li>
+              <li><a class="dropdown-item" href="/comNetlogin">ComputerNetwork2564</a></li>
+              <li><a class="dropdown-item" href="/comOrglogin">ComputerOrganized2564</a></li>
+              <li><a class="dropdown-item" href="/problogin">Probability and Statistic2564</a></li>
+              <li><a class="dropdown-item" href="/epplogin">English for Professional Purpose2564</a></li>
+            </ul>
+          </li>
+
+
+          {% endif %}
+        </ul>
+
+
+
+
+
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          {% if user.is_staff == 1 %}
+          <a class="nav-link" aria-current="page" href="#">Hi {{user.first_name}}</a>
+          {% else %}
+          <a class="nav-link" aria-current="page" href="/userInformation">Hi {{user.first_name}}</a>
+          {% endif %}
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/logout">Logout</a>
+        </li>
+
+
+
+
+        {% else %}
+        <form class="d-flex">
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/register">Registeration</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/loginGet">Login</a>
+          </li>
+
+        </form>
+        {% endif %}
+
+
+
+
+      </div>
+    </div>
+  </nav>
+  <div class="body">
+    {% block content %}
+
+    {% endblock %}
+  </div>
+
+
+</body>
+
+</html>

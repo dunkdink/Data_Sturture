@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+
+
+
+{% block content %}
+
+
+<style>
+    .box {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .boxPic {
+        background-color: #0dcaf0;
+        color: white;
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        height: 500px;
+
+    }
+
+    .butt {
+        margin: 20px;
+        text-align: right;
+    }
+    .btnChange{
+    border-radius: 25px;
+    width: 130px;
+  }
+</style>
+
+<div class="container">
+
+    <div class="box my-4">
+        <h1 style="display: inline;">PROBABILITY AND STATISTIC</h1>
+    </div>
+
+
+    <img src="https://miro.medium.com/max/720/0*UjBJ_iTNESi6Zevk.jpg" alt="..." width="100%" height="auto">
+    <br>
+    <br>
+    <p>Probability and statistics, the branches of mathematics concerned with the laws governing random events,
+        including the collection, analysis, interpretation, and display of numerical data. Probability has its origin in
+        the study of gambling and insurance in the 17th century, and it is now an indispensable tool of both social and
+        natural sciences. Statistics may be said to have its origin in census counts taken thousands of years ago; as a
+        distinct scientific discipline, however, it was developed in the early 19th century as the study of populations,
+        economies, and moral actions and later in that century as the mathematical tool for analyzing such numbers. For
+        technical information on these subjects, see probability theory and statistics.</p>
+    <br>
+    <div class="butt">
+        {% if user.is_authenticated %}
+        <a href="/problogin" class="btnChange btn btn-dark text-white">Join Here</a>
+        {% else %}
+        <h5>Please login First</h5>
+        <a href="/loginGet" class="btnChange btn btn-dark text-white">Login Here</a>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

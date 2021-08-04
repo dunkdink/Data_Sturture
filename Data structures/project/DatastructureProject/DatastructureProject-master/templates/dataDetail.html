@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+{% block content %}
+
+
+<style>
+    
+ 
+    .box {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .boxPic {
+        background-color: #0dcaf0;
+        color: white;
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        height: 500px;
+    }
+
+    .butt {
+        margin: 20px;
+        text-align: right;
+    }
+    .btnChange{
+    border-radius: 25px;
+    width: 130px;
+  }
+    
+</style>
+
+<div class="container">
+
+    <div class="box my-4">
+        <h1 style="display: inline;">DATA STRUCTURE AND ALGORITHM</h1>
+    </div>
+
+
+    <img src="https://miro.medium.com/max/1024/0*I5vtdhUqmRJ1zI1e.jpg" alt="..." width="100%" height="auto">
+    <br>
+    <br>
+    <p>Data Structure is a way of collecting and organising data in such a way that we can perform operations on these
+        data in an effective way. Data Structures is about rendering data elements in terms of some relationship, for
+        better organization and storage. For example, we have some data which has, player's name "Virat" and age 26.
+        Here "Virat" is of String data type and 26 is of integer data type.
+
+        We can organize this data as a record like Player record, which will have both player's name and age in it. Now
+        we can collect and store player's records in a file or database as a data structure. For example: "Dhoni" 30,
+        "Gambhir" 31, "Sehwag" 33
+
+        If you are aware of Object Oriented programming concepts, then a class also does the same thing, it collects
+        different type of data under one single entity. The only difference being, data structures provides for
+        techniques to access and manipulate data efficiently.
+
+        In simple language, Data Structures are structures programmed to store ordered data, so that various operations
+        can be performed on it easily. It represents the knowledge of data to be organized in memory. It should be
+        designed and implemented in such a way that it reduces the complexity and increases the efficiency.</p>
+
+    <div class="butt">
+        {% if user.is_authenticated %}
+        <a href="/dataStructlogin" class="btnChange btn btn-dark text-white">Join Here</a>
+        {% else %}
+        <h5>Please login First</h5>
+        <a href="/loginGet" class="btnChange btn btn-dark text-white">Login Here</a>
+
+        {% endif %}
+    </div>
+
+</div>
+
+
+
+{% endblock %}

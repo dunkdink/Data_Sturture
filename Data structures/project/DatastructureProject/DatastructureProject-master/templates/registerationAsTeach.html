@@ -1,0 +1,88 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #0dcaf0;
+        height: 100vh;
+    }
+    #regis .container #regis-row #regis-column #regis-box {
+        margin-top: 80px;
+        max-width: 600px;
+        height: 650px;
+        border-radius: 25px;
+        /* border: 1px solid #9C9C9C; */
+        background-color: #ffffff;
+    }
+    #regis .container #regis-row #regis-column #regis-box #regis-form {
+        padding: 20px;
+    }
+    #regis .container #regis-row #regis-column #regis-box #regis-form {
+        margin-top: -85px;
+    }
+</style>
+
+
+<body>
+    <div id="regis">
+        <!-- <h3 class="text-center text-white pt-5">Registeration As Teacher form</h3> -->
+        {% if messages %}
+        <center>
+            <div class="alert alert-danger" role="alert">
+                {% for message in messages %}
+                    <b>{{message}}</b>
+                {% endfor %}
+            </div>
+        </center>
+        {% endif %}
+        <div class="container">
+            <div id="regis-row" class="row justify-content-center align-items-center">
+                <div id="regis-column" class="col-md-6">
+                    <div id="regis-box" class="col-md-12">
+                        <form action="addFormedRegisterAsTeach" method="post">
+                            {% csrf_token %}
+                            <br>
+                            <h3 class="text-center text-dark">Register As Teacher</h3>
+                            <p  class="text-center text-dark">Please fill this from to create an account</p>
+                            <div class = "from-group">
+                                <label for="" class="text-dark">Username : </label><br>
+                                <input type="text" class = "form-control" name="userName">
+                            </div>
+                            <div class = "from-group">
+                                <label for="" class="text-dark">Name : </label><br>
+                                <input type="text" class = "form-control" name="studentName">
+                            </div>
+                            <div class = "from-group">
+                                <label for="" class="text-dark">Surname : </label><br>
+                                <input type="text" class = "form-control" name="studentSurname">
+                            </div>
+                            <div class = "from-group">
+                                <label for="" class="text-dark">Email : </label><br>
+                                <input type="email" class = "form-control" name="email">
+                            </div>
+                            <div class = "from-group">
+                                <label for="" class="text-dark">Password : </label><br>
+                                <input type="password" class = "form-control" name="password">
+                            </div>
+                            <div class = "from-group">
+                                <label for="" class="text-dark">Re-Password : </label><br>
+                                <input type="password" class = "form-control" name="repassword">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-dark btn-md" value="Register">
+                            </div>
+                            <div id="login-link" class="text-right">
+                                <a href="/loginGet" class="text-dark">Login here</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+    

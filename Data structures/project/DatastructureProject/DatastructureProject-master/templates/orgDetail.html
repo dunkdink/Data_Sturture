@@ -1,0 +1,73 @@
+{% extends 'layout.html' %}
+{% load static from static %}
+
+
+
+{% block content %}
+
+<style>
+    .box {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        padding: 20px;
+        text-align: center;
+    }
+
+    .boxPic {
+        background-color: #0dcaf0;
+        color: white;
+        border-radius: 10px;
+        /* border: 2px solid black; */
+        height: 500px;
+
+    }
+
+    .butt {
+        margin: 20px;
+        text-align: right;
+    }
+    .btnChange{
+    border-radius: 25px;
+    width: 130px;
+  }
+</style>
+
+<div class="container">
+
+    <div class="box my-4">
+        <h1 style="display: inline;">COMPUTER ORGANIZATION AND ASSEMBLY LANGUAGE</h1>
+    </div>
+
+
+    <img src="https://www.bu.edu/caadlab/img/Computer_Arch.f56ff915.jpg" alt="..." width="100%" height="auto">
+    <br>
+    <br>
+    <p>Computer Organization and Assembly Language Programming deals with lower level computer programming—machine or
+        assembly language, and how these are used in the typical computer system. The book explains the operations of
+        the computer at the machine language level. The text reviews basic computer operations, organization, and deals
+        primarily with the MIX computer system. The book describes assembly language programming techniques, such as
+        defining appropriate data structures, determining the information for input or output, and the flow of control
+        within the program. The text explains basic I/O programming concepts, technique of interrupts, and an overlapped
+        I/O. The text also describes the use of subroutines to reduce the number of codes that are repetitively written
+        for the program. An assembler can translate a program from assembly language into a loader code for loading into
+        the computer's memory for execution. A loader can be of several types such as absolute, relocatable, or a
+        variation of the other two types. A linkage editor links various small segments into one large segment with an
+        output format similar to an input format for easier program handling. The book also describes the use of other
+        programming languages which can offer to the programmer the power of an assembly language by his using the
+        syntax of a higher-level language. The book is intended as a textbook for a second course in computer
+        programming, following the recommendations of the ACM Curriculum 68 for Course B2 "Computers and Programming.
+    </p>
+    <br>
+    <div class="butt">
+        {% if user.is_authenticated %}
+        <a href="/comOrglogin" class="btnChange btn btn-dark text-white">Join Here</a>
+        {% else %}
+        <h5>Please login First</h5>
+        <a href="/loginGet" class="btnChange btn btn-dark text-white">Login Here</a>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{%extends 'test001.html' %}
+<style>
+  .column {
+    float: left;
+    justify-content: center;
+    width: 20%;
+    padding: 10px;
+    height: 300px;
+    text-align: center;
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+</style>
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raksa</title>
+</head>
+
+<div class="mySlides">
+  <div class="container-fluid" style="background-image:url(https://www.img.in.th/images/a7749af04933365c2b325a7c61e02847.png); height: 770px; background-repeat: no-repeat; background-size: cover;" >
+    <div class="container" style="font-family: 'Trirong', serif;font-size: 66px; font-weight:700; color: aliceblue; padding-top: 75px; padding-left: 95px;" >
+        RAKSA HOSPITAL
+    </div>
+    <div class="container" style="font-family: 'Charmonman', cursive;font-size: 33px; font-weight:700; color: aliceblue;padding-left: 95px; ">
+        โรงพยาบาลในฝันแห่งการให้ โรงพยาบาลที่เป็นที่ 1 และเป็นที่พึ่งของสังคม
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="mySlides">
+  <div class="container-fluid" style="background-image:url(https://www.img.in.th/images/fbe2daf6d46b5b2a00d650ce0ed0f1df.jpg); height: 770px; background-repeat: no-repeat; background-size: cover;" >
+    <div class="container" style="font-family: 'Trirong', serif;font-size: 66px; font-weight:700; color: aliceblue; padding-top: 75px; padding-left: 95px;" >
+      RAKSA HOSPITAL
+    </div>
+    <div class="container" style="font-family: 'Charmonman', cursive;font-size: 33px; font-weight:700; color: aliceblue; padding-left: 95px; ">
+      แพทย์ผู้เชี่ยวชาญพร้อมให้บริการ 24 ชั่วโมง
+    </div>
+  </div>
+</div>
+<div class="mySlides">
+  <div class="container-fluid" style="background-image:url(https://www.img.in.th/images/bf538ea34550ca871d1e21b61343d91b.jpg); height: 770px; background-repeat: no-repeat; background-size: cover;" >
+    <div class="container" style="font-family: 'Trirong', serif;font-size: 66px; font-weight:700; color: aliceblue; padding-top: 75px; padding-left: 95px;" >
+      RAKSA HOSPITAL
+    </div>
+    <div class="container" style="font-family: 'Charmonman', cursive;font-size: 33px; font-weight:700; color: aliceblue; padding-left: 95px; ">
+      การวิจัยต่างๆทางการแพทย์ที่ล้ำสมัย
+    </div>
+  </div>
+</div>
+
+<div class="container" style="font-family: 'Mitr', sans-serif;font-weight:500; font-size: 28px; color: #00007A; padding-top: 10px;" >
+  <p style="width: 120px; border-bottom: 5px #990000 solid; ">
+    ข้อมูลโรค
+  </p>
+</div>
+<div class="container" >
+  <div class="row">
+    <div class="column">
+      <p>โรค1</p>
+      <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+    </div>
+    <div class="column">
+      <p>โรค1</p>
+      <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+    </div>
+    <div class="column">
+      <p>โรค1</p>
+      <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+    </div>
+    <div class="column">
+      <p>โรค1</p>
+      <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+    </div>
+    <div class="column">
+      <p>โรค1</p>
+      <img src="https://www.vejthani.com/wp-content/uploads/2019/12/shutterstock_1168123948-copy-e1576571078942.jpg" width="200" height="200">
+    </div>
+  </div>
+</div>
+<script>
+  var myIndex = 0;
+  carousel();
+  
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 6500); 
+  }
+  </script>
+
+{% endblock%}
